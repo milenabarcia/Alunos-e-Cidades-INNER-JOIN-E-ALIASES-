@@ -1,0 +1,32 @@
+CREATE TABLE Cidades (
+  id        INTEGER   PRIMARY KEY AUTOINCREMENT,
+  nome      VARCHAR(60)  NOT NULL,
+  população INT
+  );
+  -- criação da tabela alunos --
+ CREATE TABLE Alunos (
+   id         INTEGER   PRIMARY KEY AUTOINCREMENT ,
+   nome       VARCHAR (60) NOT NULL,
+   data_nasc  DATE,
+   cidade_id  INT,
+   
+   FOREIGN KEY (cidade_id) REFERENCES Cidades (id)
+   );
+    -- inserindo dados na tabela Cidades --
+   INSERT INTO Cidades (id, nome, população) VALUES (NULL, 'Valfenda', 2000);
+   INSERT INTO Cidades (id, nome, população) VALUES (NULL, 'Condado', 3000);
+   INSERT INTO Cidades (id, nome, população) VALUES (NULL, 'Esgaroth', 5000);
+   INSERT INTO Cidades (id, nome, população) VALUES (NULL, 'Mordor', 1);
+   INSERT INTO Cidades (id, nome, população) VALUES (NULL, 'Gondor', 10000)
+   
+   select * FROM Cidades
+    -- inserindo dados na tabela Alunos --
+   INSERT INTO Alunos (id, nome, data_nasc, cidade_id) VALUES (NULL, 'Sauron', '0000-01-01', 4);
+   INSERT INTO Alunos (id, nome, data_nasc, cidade_id) VALUES (NULL, 'Galadriel', '0000-01-02', 1);
+   INSERT INTO Alunos (id, nome, data_nasc, cidade_id) VALUES (NULL, 'Bilbo Bolseiro', '1024-04-30', 2);
+   INSERT INTO Alunos (id, nome, data_nasc, cidade_id) VALUES (NULL, 'Bard', '1130-03-18', 3):
+   INSERT INTO Alunos (id, nome, data_nasc, cidade_id) VALUES (NULL, 'Aragorn', '1230-05-08', 5)
+   select * FROM Alunos
+   
+--Inner Join--
+  select* from Alunos inner join Cidades on Cidades.id = Alunos.cidade_id;
